@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local configuration, history, and credentials
+.env
+.env.*
+!.env.example
+settings.json
+history.db
+history.db-*
+archive.txt
+error.log
+cookies.txt
+cookies_from_extension.txt
+*.cookies
+
+# Download intermediates and local output
+*.part
+*.ytdl
+downloads/
+output/
+
+# Editor and operating system files
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
