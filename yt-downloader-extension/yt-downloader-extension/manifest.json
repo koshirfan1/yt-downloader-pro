@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YT Downloader Connector",
+  "version": "1.0.0",
+  "description": "Current video ko YT Downloader Pro app ki queue mein bhejta hai aur YouTube cookies app ko deta hai.",
+  "permissions": ["cookies", "contextMenus", "storage", "activeTab"],
+  "host_permissions": ["https://*.youtube.com/*", "http://127.0.0.1/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YT Downloader mein bhejein"
+  },
+  "commands": {
+    "send-current": {
+      "suggested_key": { "default": "Alt+Shift+D" },
+      "description": "Current page ko YT Downloader mein bhejein"
+    }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

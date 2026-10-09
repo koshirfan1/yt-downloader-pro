@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ur">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg:#fff; --fg:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#dc2626; --ok:#16a34a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1f2024; --fg:#e5e7eb; --muted:#9ca3af; --line:#374151; } }
+  body { width: 330px; margin: 0; padding: 14px; background: var(--bg); color: var(--fg); font: 13px system-ui, sans-serif; }
+  h1 { font-size: 15px; margin: 0 0 8px; }
+  .row { display: flex; align-items: center; gap: 6px; margin: 6px 0; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #9ca3af; flex: none; }
+  .dot.ok { background: var(--ok); } .dot.bad { background: var(--accent); }
+  .page { color: var(--muted); font-size: 12px; margin: 4px 0 10px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  button { width: 100%; padding: 9px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--fg); border: 1px solid var(--line); margin-top: 8px; font-weight: 500; }
+  button:disabled { opacity: .5; cursor: default; }
+  select, input[type=text] { width: 100%; box-sizing: border-box; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); }
+  .msg { min-height: 16px; margin-top: 10px; font-size: 12px; line-height: 1.4; }
+  .msg.ok { color: var(--ok); } .msg.err { color: var(--accent); }
+  details { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+  summary { cursor: pointer; color: var(--muted); }
+  small { color: var(--muted); display: block; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <h1>YT Downloader</h1>
+  <div class="row"><span id="dot" class="dot"></span><span id="status">Check ho raha hai...</span></div>
+  <div id="page" class="page"></div>
+
+  <div class="row">
+    <select id="quality"></select>
+  </div>
+  <div class="row"><label><input type="checkbox" id="playlist"> Poori playlist download karein</label></div>
+  <button id="send">Downloader mein bhejein</button>
+  <button id="cookies" class="secondary">YouTube cookies app ko bhejein</button>
+  <div id="msg" class="msg"></div>
+
+  <details id="settings">
+    <summary>Token (pehli baar zaroori)</summary>
+    <div class="row"><input type="text" id="token" placeholder="App se Copy kiya hua token"></div>
+    <button id="save" class="secondary">Token save karein</button>
+    <small>Token app ki window mein "Chrome extension token" ke saamne hota hai.</small>
+  </details>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
